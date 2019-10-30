@@ -1,4 +1,3 @@
-package com.example.utils.data;
 
 /**
  * 数组实现循环队列
