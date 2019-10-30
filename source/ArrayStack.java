@@ -1,4 +1,3 @@
-package com.example.utils.data;
 
 public class ArrayStack<E> {
 
