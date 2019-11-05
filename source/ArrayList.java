@@ -1,4 +1,3 @@
-
 /**
  * 动态数组实现ArrayList
  */
@@ -23,6 +22,14 @@ public class ArrayList<E> {
     public ArrayList(int initCapacity) {
         table = (E[]) new Object[initCapacity];
         size = 0;
+    }
+
+    public ArrayList(E[] arr) {
+        table = (E[]) new Object[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            table[i] = arr[i];
+        }
+        size = arr.length;
     }
 
     /**
@@ -168,6 +175,20 @@ public class ArrayList<E> {
         }
         size = 0;
         return true;
+    }
+
+    /**
+     * 交换指定位置的元素
+     * @param i
+     * @param j
+     */
+    public void swap(int i, int j) {
+        if (i < 0 || i >= size || j < 0 || j >= size) {
+            throw new IllegalArgumentException("illegal argument");
+        }
+        E temp = table[i];
+        table[i] = table[j];
+        table[j] = temp;
     }
 
     // 扩容
